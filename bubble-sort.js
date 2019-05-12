@@ -6,7 +6,8 @@ function bubbleSort(arr) {
     // 末尾の値を前へ移動させる
     for (let j = arr.length - 1; j > i; j--) {
       // ひとつ前の値が大きければ、現在の位置と入れ替える
-      if (arr[j] < arr[j - 1]) {
+      // 標準入力の場合、Number()に変換しないと文字列としての比較になる
+      if (Number(arr[j]) < Number(arr[j - 1])) {
         // 分割代入でtmpを作らずに入れ替え
         [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
       }
